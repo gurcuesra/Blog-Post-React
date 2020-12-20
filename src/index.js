@@ -6,21 +6,23 @@ import reportWebVitals from './reportWebVitals';
 
 const myBlogPost = {
   title: 'My first blog',
+  body: 'lorem ipsum dolor sit amet...',
   published: true
 }
 
-let isPublishedClassName;
-
+let classProperties;
 if(myBlogPost.published) {
-  isPublishedClassName = "green";
+  classProperties='green';
 } else {
-  isPublishedClassName = "red";
+  classProperties="red";
 }
-
 const blogPost = (
-  <h1 className={isPublishedClassName}>{myBlogPost.title}</h1>
+  <div>
+    <h1 id="title" className={classProperties}>{myBlogPost.title}</h1>
+    <p>{myBlogPost.body}</p>
+    <img src="" alt=""/>
+  </div>
 )
-
 ReactDOM.render(
   blogPost,
   document.getElementById('root')

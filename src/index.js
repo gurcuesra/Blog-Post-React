@@ -16,10 +16,23 @@ if(myBlogPost.published) {
 } else {
   classProperties="red";
 }
+
+function publishThePost(e) {
+  if(e.target.innerText === "Publish"){
+    e.target.innerText = "Unpublish";
+    document.getElementById('title').style.color = "green";
+  } else {
+    e.target.innerText = "Publish";
+    document.getElementById('title').style.color = "red";
+  }
+  
+}
+
 const blogPost = (
   <div>
     <h1 id="title" className={classProperties}>{myBlogPost.title}</h1>
     <p>{myBlogPost.body}</p>
+    <button onClick={publishThePost}>Unpublish</button>
     <img src="" alt=""/>
   </div>
 )

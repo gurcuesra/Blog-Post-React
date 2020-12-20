@@ -4,10 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const myBlogPost = {
+  title: 'My first blog',
+  published: true
+}
+
+let isPublishedClassName;
+
+if(myBlogPost.published) {
+  isPublishedClassName = "green";
+} else {
+  isPublishedClassName = "red";
+}
+
+const blogPost = (
+  <h1 className={isPublishedClassName}>{myBlogPost.title}</h1>
+)
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  blogPost,
   document.getElementById('root')
 );
 
